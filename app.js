@@ -103,7 +103,62 @@ function sayHello() {
 }
 sayHello();
 /********** Never **********/
-function throwError(errorMsg) {
-    throw new Error(errorMsg);
+// function throwError(errorMsg : string): never{
+//     throw new Error(errorMsg);
+// }
+// throwError("Hata")
+/********** If-Else **********/
+var k = 50;
+var l = 25;
+// if(k<l){
+// console.log("L is bigger than K ");
+// }
+// else if(k>l){
+//     console.log("L is smaller than K ");
+// }
+// else{
+//     console.log("L is equal to K");
+// }
+k > l ? console.log("L is smaller than K ") : console.log("L is smaller than K or equal ");
+/********** Switch-Case **********/
+var day = 5;
+switch (day) {
+    case 1:
+        console.log('Monday');
+        break;
+    case 2:
+        console.log('Tuesday');
+        break;
+    case 3:
+        console.log('Wednesday');
+        break;
+    case 4:
+        console.log('Thursday');
+        break;
+    case 5:
+        console.log('Friday');
+        break;
+    case 6:
+        console.log('Saturday');
+        break;
+    case 7:
+        console.log('Sunday');
+        break;
+    default:
+        console.log('The week consists of 7 days. Enter one day.');
+        break;
 }
-throwError("Hata");
+/********** For-Loop **********/
+for (var i = 0; i < 3; i++) {
+    console.log("İ is", i);
+}
+var arr3 = [10, 20, 30, 40];
+//'of' traverses each element of the array
+for (var _i = 0, arr3_1 = arr3; _i < arr3_1.length; _i++) {
+    var item = arr3_1[_i];
+    console.log(item);
+}
+//'in' returns index values
+for (var item in arr3) {
+    console.log(item);
+}

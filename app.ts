@@ -148,24 +148,24 @@ console.log(code);
 
 /********** Any **********/
 
-let someThing : any = "Hi";
-someThing= 578;
+let someThing: any = "Hi";
+someThing = 578;
 someThing = true;
 
-someThing={
-    age : 12,
+someThing = {
+    age: 12,
     name: "Ali"
 }
 
 console.log(someThing);
 
-let arr2 : any[] = [ "Ali", 12, false];
+let arr2: any[] = ["Ali", 12, false];
 console.log(arr2);
 
 
 /********** Void **********/
 
-function sayHello(): void{
+function sayHello(): void {
     console.log('Hello')
 }
 
@@ -173,8 +173,65 @@ sayHello();
 
 /********** Never **********/
 
-function throwError(errorMsg : string): never{
-    throw new Error(errorMsg);
+// function throwError(errorMsg : string): never{
+//     throw new Error(errorMsg);
+// }
+
+// throwError("Hata")
+
+/********** If-Else **********/
+
+let k: number = 50;
+let l: number = 25;
+
+// if(k<l){
+// console.log("L is bigger than K ");
+// }
+// else if(k>l){
+//     console.log("L is smaller than K ");
+// }
+// else{
+//     console.log("L is equal to K");
+// }
+
+k > l ? console.log("L is smaller than K ") : console.log("L is smaller than K or equal ");
+
+/********** Switch-Case **********/
+
+let day: number = 5;
+
+switch (day) {
+    case 1: console.log('Monday');
+        break;
+    case 2: console.log('Tuesday');
+        break;
+    case 3: console.log('Wednesday');
+        break;
+    case 4: console.log('Thursday');
+        break;
+    case 5: console.log('Friday');
+        break;
+    case 6: console.log('Saturday');
+        break;
+    case 7: console.log('Sunday');
+        break;
+    default: console.log('The week consists of 7 days. Enter one day.');
+        break;
 }
 
-throwError("Hata")
+/********** For-Loop **********/
+
+for (let i = 0; i < 3; i++) {
+    console.log("İ is", i);
+}
+
+let arr3 = [10, 20, 30, 40];
+//'of' traverses each element of the array
+for (let item of arr3) {
+    console.log(item);
+}
+
+//'in' returns index values
+for (let item in arr3) {
+    console.log(item);
+}
