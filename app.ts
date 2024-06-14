@@ -235,3 +235,64 @@ for (let item of arr3) {
 for (let item in arr3) {
     console.log(item);
 }
+
+/********** While - Do While Loop **********/
+
+let counter = 0;
+
+while (counter < 5) {
+    console.log(counter);
+    counter++
+
+    if (counter == 2) {
+        break;
+    }
+}
+
+do {
+    console.log(counter);
+    counter++;
+} while (counter > 10);
+
+/********** Function **********/
+
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+let toplam = add(25, 40);
+console.log(typeof (toplam));
+
+function print() {
+    console.log("Typescript");
+    return 38;
+}
+
+let variable = print();
+console.log(variable);
+
+function addName(name: string, surname: string = "KLHC"): string {
+    return (name + ' ' + surname);
+}
+
+let veriableName = addName("Ikbal", "Kulahcioglu")
+console.log(veriableName);
+
+/********** Arrow Function **********/
+
+//When c is optional
+function Multiplication(a: number, b: number, c?: number) {
+    if (typeof c !== 'undefined') {
+        return a * b * c;
+    }
+    return a * b;
+}
+
+let veriableMultiplication = Multiplication(5, 10);
+console.log(veriableMultiplication);
+
+//arrow function as well as lambda function is to write the function on a single line
+let Multiplication2 = (a: number, b: number): number => { return a * b }
+
+let veriableMultiplication2 = Multiplication2(5, 10);
+console.log(veriableMultiplication2);
