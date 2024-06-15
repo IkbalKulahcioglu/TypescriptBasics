@@ -207,3 +207,44 @@ console.log(veriableMultiplication);
 var Multiplication2 = function (a, b) { return a * b; };
 var veriableMultiplication2 = Multiplication2(5, 10);
 console.log(veriableMultiplication2);
+function add2(a, b) {
+    return a + b;
+}
+// let addVeriable = add2(9,5);
+var addVeriable = add2("Type", "Script");
+console.log(addVeriable);
+/********** Rest Parameters **********/
+function addRest(a) {
+    var numbers = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        numbers[_i - 1] = arguments[_i];
+    }
+    console.log(a);
+    var total = 0;
+    numbers.forEach(function (num) { return total += num; });
+    return total;
+}
+console.log(addRest("Ikbal", 20, 30));
+function addRest2(message) {
+    var names = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        names[_i - 1] = arguments[_i];
+    }
+    console.log(message + " " + names.join(", "));
+}
+addRest2("Hi everyone", "Ikbal", "Mary", "Jhon");
+/********** Class **********/
+var Person1 = /** @class */ (function () {
+    function Person1(id, firstName, lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    Person1.prototype.getFullName = function () {
+        return "".concat(this.firstName, " ").concat((this, this.lastName));
+    };
+    return Person1;
+}());
+var person2 = new Person1(1, "Ikbal", "Kulahcioglu");
+console.log(person2);
+console.log(person2.getFullName());
