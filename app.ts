@@ -376,5 +376,23 @@ class Employee extends Person2 {
     }
 }
 
-let employee1 = new Employee(24, "Ikbal", "Kulahcioglu"); 
-console.log(employee1.getFullName())
+let employee1 = new Employee(24, "Ikbal", "Kulahcioglu");
+console.log(employee1.getFullName());
+
+/********** Static Method **********/
+
+class Circle {
+    static pi: number = 3.14;
+    pi = 3;
+
+    static calculate(radius: number) {
+        return this.pi * radius * radius;
+    }
+}
+
+//If we do not define it as static, we need to define it as new in this way in order to use the pi in the class.
+let object = new Circle();
+console.log(object.pi);
+
+console.log(Circle.pi);
+console.log(Circle.calculate(7));
