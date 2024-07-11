@@ -299,52 +299,82 @@ console.log(veriableMultiplication2);
 
 /********** Function Overloading **********/
 
-function add2(a:number, b:number):number;
-function add2(a:string, b:string):string;
+function add2(a: number, b: number): number;
+function add2(a: string, b: string): string;
 
-function add2(a:any, b:any): any{
-    return a+b;
+function add2(a: any, b: any): any {
+    return a + b;
 }
 
 // let addVeriable = add2(9,5);
-let addVeriable = add2("Type","Script");
+let addVeriable = add2("Type", "Script");
 console.log(addVeriable);
 
 /********** Rest Parameters **********/
 
-function addRest(a: string, ...numbers:number[]):number{
-console.log(a);
-let total=0;
-numbers.forEach((num) => total += num);
-return total;
+function addRest(a: string, ...numbers: number[]): number {
+    console.log(a);
+    let total = 0;
+    numbers.forEach((num) => total += num);
+    return total;
 }
 
 console.log(addRest("Ikbal", 20, 30))
 
-function addRest2(message:string, ...names:string[]){
-    console.log(message+ " "+ names.join(", "));
+function addRest2(message: string, ...names: string[]) {
+    console.log(message + " " + names.join(", "));
 }
 
 addRest2("Hi everyone", "Ikbal", "Mary", "Jhon")
 
 /********** Class **********/
 
-class Person1{
-    id:number;
-    firstName:string;
-    lastName:string;
+class Person1 {
+    id: number;
+    firstName: string;
+    lastName: string;
 
-    constructor(id:number, firstName:string, lastName:string){
-        this.id =id;
+    constructor(id: number, firstName: string, lastName: string) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    getFullName(){
-        return`${this.firstName} ${this,this.lastName}`
+    getFullName() {
+        return `${this.firstName} ${this, this.lastName}`
     }
 }
 
 let person2 = new Person1(1, "Ikbal", "Kulahcioglu");
 console.log(person2);
 console.log(person2.getFullName());
+
+/********** Inheritance **********/
+
+class Person2 {
+    id: number;
+    firstName: string;
+    lastName: string;
+
+    constructor(id: number, firstName: string, lastName: string) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+//Person parent Employee child class
+//You trigger the constructor of the parent class with the super keyword
+
+class Employee extends Person2 {
+    constructor(id: number, firstName: string, lastName: string) {
+        super(id, firstName, lastName)
+    }
+}
+
+let employee1 = new Employee(24, "Ikbal", "Kulahcioglu"); 
+console.log(employee1.getFullName())
